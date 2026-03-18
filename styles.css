@@ -1,0 +1,356 @@
+/* ===== BASE & RESETS ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-height: 100dvh; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: rgba(120,75,236,0.3); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(120,75,236,0.5); }
+
+/* ===== HERO ANIMATED ORBS ===== */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(120,75,236,0.18), transparent 70%);
+  top: -10%; left: -10%;
+  animation: orbFloat1 12s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,193,253,0.12), transparent 70%);
+  bottom: 0; right: -5%;
+  animation: orbFloat2 15s ease-in-out infinite;
+}
+.hero-orb-3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(230,195,100,0.08), transparent 70%);
+  top: 40%; left: 50%;
+  animation: orbFloat3 18s ease-in-out infinite;
+}
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(80px, 60px) scale(1.1); }
+  66% { transform: translate(-40px, 30px) scale(0.95); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-60px, -40px) scale(1.15); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -50px) scale(1.1); }
+}
+
+/* ===== GRID BACKGROUND ===== */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(120,75,236,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,75,236,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent);
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+  background: rgba(30, 30, 34, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(74, 69, 79, 0.15);
+  transition: border-color 0.5s, box-shadow 0.5s, transform 0.5s;
+}
+.glass-card:hover {
+  box-shadow: 0 20px 80px rgba(120,75,236,0.08);
+}
+
+/* ===== 3D CARD HOVER ===== */
+.card-3d-hover {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
+}
+.card-3d-hover:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-1deg);
+  box-shadow: 0 30px 80px rgba(120,75,236,0.12), 0 0 0 1px rgba(120,75,236,0.08);
+}
+
+/* ===== PERSPECTIVE CONTAINER ===== */
+.perspective-container {
+  perspective: 1200px;
+}
+.hero-3d-card {
+  position: relative;
+  transform: rotateX(4deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hero-3d-card:hover {
+  transform: rotateX(1deg) rotateY(-1deg);
+}
+
+/* ===== FLOATING BADGES ===== */
+.floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 16px;
+  background: rgba(20, 20, 22, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(120,75,236,0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  color: #e5e2e1;
+  z-index: 20;
+}
+.floating-badge-1 {
+  top: 15%; left: -40px;
+  animation: floatBadge1 5s ease-in-out infinite;
+}
+.floating-badge-2 {
+  bottom: 20%; right: -30px;
+  animation: floatBadge2 6s ease-in-out infinite;
+}
+@keyframes floatBadge1 {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+@keyframes floatBadge2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-12px) rotate(-1deg); }
+}
+
+/* ===== MARQUEE ===== */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee 35s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== CTA BUTTON PRIMARY ===== */
+.cta-btn-primary {
+  background: linear-gradient(135deg, #784bec, #a855f7, #00c1fd);
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: gradientShift 4s ease infinite;
+  box-shadow: 0 0 30px rgba(120,75,236,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn-primary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 50px rgba(120,75,236,0.35);
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== PROBLEM CARDS ===== */
+.problem-card {
+  perspective: 800px;
+  cursor: default;
+}
+.problem-card .card-3d-inner {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 30, 34, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 69, 79, 0.12);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s, box-shadow 0.4s;
+  transform-style: preserve-3d;
+}
+.problem-card:hover .card-3d-inner {
+  transform: translateY(-8px) rotateX(5deg) rotateY(-3deg);
+  border-color: rgba(120, 75, 236, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(120, 75, 236, 0.08);
+}
+
+/* ===== STEP CARDS ===== */
+.step-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 30, 34, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 69, 79, 0.12);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(120, 75, 236, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+.step-number {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--step-color, #784bec);
+  opacity: 0.06;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.step-card:hover .step-number { opacity: 0.12; }
+
+/* ===== ADVANTAGE CARDS ===== */
+.advantage-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 30, 34, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 69, 79, 0.12);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.advantage-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(120, 75, 236, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== DEMO CARDS ===== */
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 30, 34, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 69, 79, 0.12);
+  text-decoration: none;
+  color: #e5e2e1;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s, box-shadow 0.5s;
+}
+.demo-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(120, 75, 236, 0.2);
+  box-shadow: 0 25px 60px rgba(120, 75, 236, 0.1);
+}
+.demo-card-icon {
+  width: 64px; height: 64px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(120,75,236,0.15), rgba(0,193,253,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #cebdff;
+  transition: transform 0.3s, background 0.3s;
+}
+.demo-card:hover .demo-card-icon {
+  transform: scale(1.1) rotateZ(-5deg);
+  background: linear-gradient(135deg, rgba(120,75,236,0.25), rgba(0,193,253,0.15));
+}
+.cta-demo-card {
+  background: linear-gradient(135deg, rgba(120,75,236,0.12), rgba(0,193,253,0.08));
+  border-color: rgba(120, 75, 236, 0.2);
+}
+.cta-demo-card:hover {
+  background: linear-gradient(135deg, rgba(120,75,236,0.2), rgba(0,193,253,0.12));
+}
+
+/* ===== CTA SECTION 3D ===== */
+.cta-section-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.cta-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.cta-orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(120, 75, 236, 0.15);
+  top: -100px; left: -100px;
+  animation: orbFloat1 10s ease-in-out infinite;
+}
+.cta-orb-2 {
+  width: 300px; height: 300px;
+  background: rgba(0, 193, 253, 0.1);
+  bottom: -80px; right: -80px;
+  animation: orbFloat2 12s ease-in-out infinite;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroTitle {
+  from { opacity: 0; transform: translateY(40px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.animate-hero-title {
+  animation: heroTitle 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation-delay: 0.15s;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .floating-badge { display: none; }
+  .hero-3d-card { transform: none; }
+  .hero-3d-card:hover { transform: none; }
+}

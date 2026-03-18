@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EasyVariants | Rapid Design Variants, Optimized for Illustrator</title>
+<meta name="description" content="EasyVariants empowers teams to generate thousands of design iterations in seconds. Automated variant generation for Adobe Illustrator."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-variant":"#353534","tertiary-fixed":"#ffe08f","on-tertiary":"#3d2e00",
+        "surface-tint":"#cebdff","on-tertiary-fixed":"#241a00","surface":"#0a0a0b",
+        "on-error":"#690005","surface-container-low":"#141416","primary-fixed-dim":"#cebdff",
+        "inverse-primary":"#693add","on-primary":"#380094","on-secondary-fixed-variant":"#004d67",
+        "primary":"#cebdff","primary-fixed":"#e8ddff","on-primary-fixed":"#21005e",
+        "tertiary-fixed-dim":"#e6c364","surface-container-high":"#1e1e22",
+        "surface-container-lowest":"#08080a","inverse-on-surface":"#313030",
+        "inverse-surface":"#e5e2e1","on-surface":"#e5e2e1","tertiary-container":"#c9a84c",
+        "on-background":"#e5e2e1","on-tertiary-fixed-variant":"#584400","on-secondary":"#003548",
+        "surface-dim":"#0a0a0b","on-tertiary-container":"#503d00","secondary-fixed-dim":"#75d1ff",
+        "secondary":"#8fd8ff","background":"#0a0a0b","outline-variant":"#4a454f",
+        "tertiary":"#e6c364","surface-container-highest":"#353534","error-container":"#93000a",
+        "on-error-container":"#ffdad6","outline":"#958e9a","error":"#ffb4ab",
+        "surface-container":"#18181b","primary-container":"#784bec",
+        "on-surface-variant":"#a8a3ae","secondary-fixed":"#c2e8ff",
+        "on-secondary-container":"#004b65","on-primary-fixed-variant":"#5113c5",
+        "secondary-container":"#00c1fd","surface-bright":"#3a3939",
+        "on-primary-container":"#f3ebff","on-secondary-fixed":"#001e2b"
+      },
+      fontFamily:{"headline":["Inter"],"body":["Manrope"],"label":["Inter"]},
+      borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+    },
+  },
+}
+</script>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 overflow-x-hidden">
+
+<!-- Navbar -->
+<header id="navbar" class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full border border-outline-variant/15 bg-surface-container/60 backdrop-blur-2xl flex justify-between items-center px-8 py-3 z-50 shadow-[0_0_80px_rgba(120,75,236,0.06)]">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary text-2xl">layers</span>
+    <span class="text-2xl font-black tracking-tighter bg-gradient-to-r from-[#784BEC] via-[#a855f7] to-[#00C1FD] bg-clip-text text-transparent">EasyVariants</span>
+  </div>
+  <nav class="hidden md:flex items-center gap-8">
+    <a class="text-primary font-semibold border-b-2 border-primary-container pb-1 font-label text-[10px] tracking-widest uppercase" href="#home">Home</a>
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors font-label text-[10px] tracking-widest uppercase" href="#oursolution">Our Solution</a>
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors font-label text-[10px] tracking-widest uppercase" href="#how_it_works">How It Works</a>
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors font-label text-[10px] tracking-widest uppercase" href="#demos">Demos</a>
+  </nav>
+  <a href="https://easyvariants.com/contactus.html" class="bg-gradient-to-r from-primary-container to-secondary-container text-white px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 hover:shadow-[0_0_30px_rgba(120,75,236,0.3)] transition-all duration-300">
+    Get Your Demo Today
+  </a>
+</header>
+
+<main>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="home" class="relative min-h-screen flex flex-col justify-center items-center pt-32 pb-16 px-6 overflow-hidden">
+  <!-- Animated background orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="grid-bg"></div>
+
+  <div class="max-w-5xl text-center space-y-8 relative z-10">
+    <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-surface-container-highest/30 border border-outline-variant/15 backdrop-blur-xl animate-fade-in">
+      <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+      <span class="text-xs font-label tracking-widest uppercase text-on-surface-variant">Rapid Variants, Optimized for Illustrator</span>
+    </div>
+    <h1 class="font-headline font-black text-5xl sm:text-6xl md:text-8xl tracking-tighter leading-[0.95] animate-hero-title">
+      Unleash Unbounded<br/>
+      <span class="bg-gradient-to-r from-primary via-[#a855f7] to-secondary-container bg-clip-text text-transparent italic">Creativity</span>
+    </h1>
+    <p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant leading-relaxed animate-fade-in-up" style="animation-delay:0.3s">
+      You Create, We Multiply. EasyVariants empowers teams to generate thousands of design variants in seconds — directly inside Adobe Illustrator.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-in-up" style="animation-delay:0.5s">
+      <a href="https://easyvariants.com/contactus.html" class="cta-btn-primary w-full sm:w-auto px-10 py-4 rounded-full font-extrabold text-lg">
+        Request a Demo
+      </a>
+      <a href="#demos" class="w-full sm:w-auto px-8 py-4 rounded-full border border-outline-variant/25 bg-surface-container-high/30 backdrop-blur-xl text-on-surface font-bold text-lg hover:border-primary/40 hover:bg-surface-container-high/50 transition-all duration-300 flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-xl">play_circle</span> Watch Demos
+      </a>
+    </div>
+  </div>
+
+  <!-- 3D Hero Video/Visual -->
+  <div class="w-full max-w-6xl mx-auto mt-16 px-4 relative z-10 perspective-container animate-fade-in-up" style="animation-delay:0.7s">
+    <div class="hero-3d-card">
+      <div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-[0_30px_100px_rgba(120,75,236,0.15)]">
+        <video autoplay muted loop playsinline class="w-full rounded-2xl" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuBbKhKgz-FkKLyPXJcvs2z9sqO8g1fdsXyv11JxxvUiJnOExP9EXCqiunPvfaOLBC7eeUrpwpefoE87C48C_ZVIUcXcbPZD1XnsFFd5k3WJ3juf_EHKz3289YN6APgrgybS8yIAok_MSv3ErpOwTNg76V9fjT6BYPQ4fdlk749WyncG1nwPk8nEKOrJxYEDqcB2k4-KPaEgGluv5Hy3vUZ9-jUH7cHtw_V_WwsZOGVX9kq3lC0PIiQ9t46q_hjJG6FmCkh7JxWWIg">
+          <source src="https://easyvariants.com/videos/explainer_variants.mp4" type="video/mp4"/>
+        </video>
+        <!-- Glow overlay -->
+        <div class="absolute inset-0 pointer-events-none rounded-2xl border border-primary/10"></div>
+      </div>
+      <!-- Floating 3D badges -->
+      <div class="floating-badge floating-badge-1">
+        <span class="material-symbols-outlined text-primary text-lg mr-2">auto_awesome</span>
+        <span class="text-sm font-semibold">AI Powered</span>
+      </div>
+      <div class="floating-badge floating-badge-2">
+        <span class="material-symbols-outlined text-secondary-container text-lg mr-2">speed</span>
+        <span class="text-sm font-semibold">10x Faster</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="w-full mt-20 py-5 border-y border-outline-variant/8 bg-surface-container-lowest/20 backdrop-blur-sm marquee-container">
+    <div class="marquee-content flex gap-12 items-center">
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Infinite Iterations</span>
+      <span class="material-symbols-outlined text-outline-variant/30">star</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Adobe Illustrator</span>
+      <span class="material-symbols-outlined text-outline-variant/30">bolt</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Brand Consistency</span>
+      <span class="material-symbols-outlined text-outline-variant/30">diamond</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Color Transitions</span>
+      <span class="material-symbols-outlined text-outline-variant/30">auto_awesome</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Infinite Iterations</span>
+      <span class="material-symbols-outlined text-outline-variant/30">star</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Adobe Illustrator</span>
+      <span class="material-symbols-outlined text-outline-variant/30">bolt</span>
+      <span class="text-2xl font-black text-outline-variant/30 tracking-tighter uppercase italic">Brand Consistency</span>
+      <span class="material-symbols-outlined text-outline-variant/30">diamond</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM SECTION ===== -->
+<section id="oursolution" class="max-w-7xl mx-auto px-8 py-32">
+  <div class="text-center mb-20">
+    <span class="text-primary font-label text-xs tracking-widest uppercase mb-4 block">The Problem</span>
+    <h2 class="text-4xl md:text-6xl font-headline font-black tracking-tight leading-tight">The Design Bottleneck:<br/><span class="text-on-surface-variant">Draining Time, Dulling Creativity</span></h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="problem-card group">
+      <div class="card-3d-inner">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-500/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-red-400 text-2xl">schedule</span>
+        </div>
+        <h3 class="text-lg font-headline font-bold mb-3">Repetitive Manual Work</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Designers drowning in the tedious cycle of duplicating designs for every new colorway, logo, or text change.</p>
+      </div>
+    </div>
+    <div class="problem-card group">
+      <div class="card-3d-inner">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-amber-400 text-2xl">warning</span>
+        </div>
+        <h3 class="text-lg font-headline font-bold mb-3">Consistency Challenges</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Ensuring every variant adheres perfectly to brand guidelines becomes an insurmountable task.</p>
+      </div>
+    </div>
+    <div class="problem-card group">
+      <div class="card-3d-inner">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-orange-400 text-2xl">hourglass_top</span>
+        </div>
+        <h3 class="text-lg font-headline font-bold mb-3">Slow Time-to-Market</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Sheer volume of manual work delays the launch of new collections and personalized offerings.</p>
+      </div>
+    </div>
+    <div class="problem-card group">
+      <div class="card-3d-inner">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-purple-400 text-2xl">block</span>
+        </div>
+        <h3 class="text-lg font-headline font-bold mb-3">Limited Customization</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Fear of overwhelming design workload prevents offering the personalized products consumers crave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION BENTO GRID ===== -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+  <div class="text-center mb-20">
+    <span class="text-secondary-container font-label text-xs tracking-widest uppercase mb-4 block">The Solution</span>
+    <h2 class="text-4xl md:text-6xl font-headline font-black tracking-tight">Unlock Design Automation<br/><span class="bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent">with EasyVariants</span></h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <!-- Large Card -->
+    <div class="md:col-span-8 group relative overflow-hidden rounded-3xl glass-card p-10 flex flex-col justify-between min-h-[480px] card-3d-hover">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 blur-[120px] -z-10 group-hover:bg-primary-container/20 transition-colors duration-700"></div>
+      <div>
+        <span class="text-primary font-label text-xs tracking-widest uppercase mb-4 block">Seamless Integration</span>
+        <h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mb-5 leading-tight max-w-lg">Works Directly Inside<br/>Adobe Illustrator.</h2>
+        <p class="text-on-surface-variant max-w-md text-base leading-relaxed">You design the original in Illustrator — we effortlessly generate every variant. Transform hours of manual effort into minutes of automated perfection.</p>
+      </div>
+      <div class="mt-8">
+        <img alt="EasyVariants Dashboard" class="rounded-2xl border border-outline-variant/15 shadow-2xl hover:shadow-[0_20px_60px_rgba(120,75,236,0.15)] transition-shadow duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbKhKgz-FkKLyPXJcvs2z9sqO8g1fdsXyv11JxxvUiJnOExP9EXCqiunPvfaOLBC7eeUrpwpefoE87C48C_ZVIUcXcbPZD1XnsFFd5k3WJ3juf_EHKz3289YN6APgrgybS8yIAok_MSv3ErpOwTNg76V9fjT6BYPQ4fdlk749WyncG1nwPk8nEKOrJxYEDqcB2k4-KPaEgGluv5Hy3vUZ9-jUH7cHtw_V_WwsZOGVX9kq3lC0PIiQ9t46q_hjJG6FmCkh7JxWWIg"/>
+      </div>
+    </div>
+    <!-- Small Card 1 -->
+    <div class="md:col-span-4 rounded-3xl glass-card p-8 flex flex-col justify-between group hover:border-primary/30 transition-all duration-500 card-3d-hover">
+      <div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-container/30 to-primary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-primary text-2xl">palette</span>
+        </div>
+        <h3 class="text-2xl font-headline font-bold mb-3">Color Transitions</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Instantly explore countless color variations with precise Hue, Saturation, and Lightness increments.</p>
+      </div>
+      <div class="pt-6 flex justify-center">
+        <img alt="Color transition feature" class="w-full h-36 object-cover rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp2pscQVnEOBhsxbmOxx3D_gF_6qJLcvIZ4DaU7tkPJTHSFFIGnChn1DQ3T5T2clXTIU1UI4JOEn9cpUnE2bXfS2NtNtnIr14OHOWMVz9HxmoK_-W79lNkEKPFT4OpQ55W9xkyRgZbiA0DvHAu4FSHzY-iAIWvsdqPFVPd3eYovNSNrWiyJvhavwsXlL0lqteSLm2yu8zI670Gez0boe1HMWiAx90o0KJtjLRGIOd8uaqV09bvuaFTivJpLvrEoBW8ylDLFoj02w"/>
+      </div>
+    </div>
+    <!-- Small Card 2 -->
+    <div class="md:col-span-4 rounded-3xl glass-card p-8 flex flex-col justify-between group hover:border-secondary-container/30 transition-all duration-500 card-3d-hover">
+      <div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary-container/30 to-secondary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-secondary-container text-2xl">aspect_ratio</span>
+        </div>
+        <h3 class="text-2xl font-headline font-bold mb-3">Smart Resizing</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Proportionally resize artwork based on product dimensions from your external data sources.</p>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <span class="material-symbols-outlined text-6xl text-outline-variant/15 group-hover:text-secondary-container/25 transition-colors duration-500" style="font-variation-settings: 'FILL' 1; font-size: 80px;">widgets</span>
+      </div>
+    </div>
+    <!-- Wide Card -->
+    <div class="md:col-span-8 rounded-3xl glass-card p-10 flex flex-col md:flex-row gap-10 items-center overflow-hidden card-3d-hover">
+      <div class="flex-1">
+        <h3 class="text-3xl font-headline font-bold mb-4">Enterprise Grade Security</h3>
+        <p class="text-on-surface-variant mb-6 leading-relaxed">Your data is yours. Industry-leading encryption and privacy protocols keep your designs safe.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings:'FILL' 1;">check_circle</span>SOC2 Type II Compliant</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings:'FILL' 1;">check_circle</span>AES-256 Bit Encryption</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings:'FILL' 1;">check_circle</span>Adobe Certified Partner</li>
+        </ul>
+      </div>
+      <div class="flex-1 -mr-16 -mb-16">
+        <img alt="Security" class="w-full rounded-tl-3xl border-t border-l border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwlBTC_ew6JMbd2H6K9S3GpzWiUoZSnK2YJWOPQZvdWuSM46y0-nlxrIXRIsK_6cxT0xGqQcQ-rqXHEUIDQu8wxTahrnAXQ_MEWc4h1EWMXTMzIGJp_GPbsc2mTvR33BOHrTY4wn6MSTXhD4TNz-txg6p8Rx4-BLTeMa1SNh00I1N1L2Pu_QRqy4CzBLvK9ZxUB2czbEM0OOZOSDJb6CBdREanh9sPvaLP8SftwKtOEWf_wvbiT4hNOdsF37DBWGgMVzEVPLQLJA"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how_it_works" class="max-w-5xl mx-auto px-8 py-32 relative">
+  <div class="text-center mb-24">
+    <span class="text-tertiary font-label text-xs tracking-widest uppercase mb-4 block">The Workflow</span>
+    <h2 class="text-4xl md:text-6xl font-headline font-black tracking-tight">How EasyVariants Works</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="step-card group">
+      <div class="step-number" style="--step-color: #784bec;">01</div>
+      <div class="w-14 h-14 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-5 group-hover:bg-primary-container/25 transition-all">
+        <span class="material-symbols-outlined text-primary text-2xl">edit_note</span>
+      </div>
+      <h4 class="text-xl font-headline font-bold mb-3">Define Your Variables</h4>
+      <p class="text-on-surface-variant text-sm leading-relaxed">Mark variable sections directly within Illustrator — logo placeholders, color swatches, text boxes. Our intuitive system lets you define precisely what changes.</p>
+    </div>
+    <div class="step-card group">
+      <div class="step-number" style="--step-color: #00c1fd;">02</div>
+      <div class="w-14 h-14 rounded-2xl bg-secondary-container/15 flex items-center justify-center mb-5 group-hover:bg-secondary-container/25 transition-all">
+        <span class="material-symbols-outlined text-secondary-container text-2xl">account_tree</span>
+      </div>
+      <h4 class="text-xl font-headline font-bold mb-3">Connect & Automate</h4>
+      <p class="text-on-surface-variant text-sm leading-relaxed">Map variable objects to your PLM system, Digital Asset Management system, or Excel sheets. EasyVariants connects the dots automatically.</p>
+    </div>
+    <div class="step-card group">
+      <div class="step-number" style="--step-color: #e6c364;">03</div>
+      <div class="w-14 h-14 rounded-2xl bg-tertiary/15 flex items-center justify-center mb-5 group-hover:bg-tertiary/25 transition-all">
+        <span class="material-symbols-outlined text-tertiary text-2xl">rocket_launch</span>
+      </div>
+      <h4 class="text-xl font-headline font-bold mb-3">Generate & Export</h4>
+      <p class="text-on-surface-variant text-sm leading-relaxed">Generate hundreds, even thousands, of error-free design variants in minutes — not hours or days. Export to production-ready formats instantly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADVANTAGE SECTION ===== -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+  <div class="text-center mb-20">
+    <span class="text-primary font-label text-xs tracking-widest uppercase mb-4 block">The Advantage</span>
+    <h2 class="text-4xl md:text-5xl font-headline font-black tracking-tight">Why Teams Choose EasyVariants</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="advantage-card group">
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-container/25 to-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-headline font-bold mb-2">Boost Design Output 10X</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Free your designers from repetitive drudgery, allowing them to focus on pure innovation and new concept development.</p>
+        </div>
+      </div>
+    </div>
+    <div class="advantage-card group">
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-container/25 to-secondary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-secondary-container text-3xl">verified</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-headline font-bold mb-2">Guaranteed Consistency</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Eliminate human error and ensure every variant perfectly aligns with your brand standards and design guidelines.</p>
+        </div>
+      </div>
+    </div>
+    <div class="advantage-card group">
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-tertiary/25 to-tertiary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-tertiary text-3xl">bolt</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-headline font-bold mb-2">Accelerated Time-to-Market</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Rapidly customize and deploy new collections, gaining a critical competitive edge in your market.</p>
+        </div>
+      </div>
+    </div>
+    <div class="advantage-card group">
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f472b6]/25 to-[#f472b6]/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-[#f472b6] text-3xl">tune</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-headline font-bold mb-2">Scalable Personalization</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Offer extensive product personalization and custom builds without fear of an unmanageable design workload.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEMOS SECTION ===== -->
+<section id="demos" class="max-w-7xl mx-auto px-8 py-32">
+  <div class="text-center mb-20">
+    <span class="text-secondary-container font-label text-xs tracking-widest uppercase mb-4 block">Seeing is Believing</span>
+    <h2 class="text-4xl md:text-6xl font-headline font-black tracking-tight">Explainer Video & Demos</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a href="https://easyvariants.com/explainer_variants.html" class="demo-card group">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">play_circle</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Explainer Video</h3>
+      <p class="text-on-surface-variant text-xs">Full product overview</p>
+    </a>
+    <a href="https://easyvariants.com/cap_variants.html" class="demo-card group">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">checkroom</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Cap Variants</h3>
+      <p class="text-on-surface-variant text-xs">Headwear demo</p>
+    </a>
+    <a href="https://easyvariants.com/sweatshirt_variants.html" class="demo-card group">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">styler</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Sweatshirt Variants</h3>
+      <p class="text-on-surface-variant text-xs">Apparel demo</p>
+    </a>
+    <a href="https://easyvariants.com/shoe_variants.html" class="demo-card group">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">steps</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Shoe Variants</h3>
+      <p class="text-on-surface-variant text-xs">Footwear demo</p>
+    </a>
+    <a href="https://easyvariants.com/color_transition_generator.html" class="demo-card group">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">palette</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Color Transitions</h3>
+      <p class="text-on-surface-variant text-xs">Color generator demo</p>
+    </a>
+    <a href="https://easyvariants.com/contactus.html" class="demo-card group cta-demo-card">
+      <div class="demo-card-icon"><span class="material-symbols-outlined text-3xl">arrow_forward</span></div>
+      <h3 class="text-lg font-headline font-bold mb-1">Request Your Demo</h3>
+      <p class="text-on-surface-variant text-xs">See it with your data</p>
+    </a>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+  <div class="relative rounded-[3rem] p-12 md:p-20 overflow-hidden bg-surface-container-low border border-outline-variant/10 text-center cta-section-3d">
+    <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/15 via-transparent to-secondary-container/10 -z-10"></div>
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <h2 class="text-4xl md:text-6xl font-headline font-black mb-8 leading-tight relative z-10">Ready to Design<br/><span class="bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent">Smarter?</span></h2>
+    <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-12 relative z-10">Transform your design workflow today. Eliminate repetitive tasks, scale your designs, and fuel innovation across your product lines.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+      <a href="https://easyvariants.com/contactus.html" class="cta-btn-primary px-10 py-5 rounded-full font-black text-lg">Request a Demo Today</a>
+      <a href="#demos" class="bg-surface-container-highest/50 backdrop-blur-lg border border-outline-variant/20 px-10 py-5 rounded-full font-bold text-lg hover:bg-surface-container-highest transition-colors">Watch Demos</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant/8 pt-20 pb-10 bg-surface-dim">
+  <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between gap-12">
+    <div class="max-w-sm space-y-6">
+      <div class="text-xl font-extrabold bg-gradient-to-r from-[#784BEC] to-[#00C1FD] bg-clip-text text-transparent">EasyVariants</div>
+      <p class="text-on-surface-variant text-sm leading-relaxed">The ultimate variation engine for modern design teams. Speed up your workflow and scale your creative output without limits.</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center hover:text-primary hover:border-primary/30 transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+        <a class="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center hover:text-primary hover:border-primary/30 transition-all" href="#"><span class="material-symbols-outlined text-sm">terminal</span></a>
+        <a class="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center hover:text-primary hover:border-primary/30 transition-all" href="#"><span class="material-symbols-outlined text-sm">groups</span></a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">Product</span>
+        <ul class="space-y-3">
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#oursolution">Features</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#how_it_works">How It Works</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#demos">Demos</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">Company</span>
+        <ul class="space-y-3">
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#">About Us</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#">Careers</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="https://easyvariants.com/contactus.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4 col-span-2 md:col-span-1">
+        <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">Legal</span>
+        <ul class="space-y-3">
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#">Privacy Policy</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#">Terms of Service</a></li>
+          <li><a class="text-on-surface-variant hover:text-secondary-container transition-colors text-sm" href="#">Trademark</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-outline-variant/8">
+    <p class="text-[10px] font-label tracking-widest uppercase text-on-surface-variant/40">© 2024 EasyVariants. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
