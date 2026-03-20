@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
      1. SCROLL ANIMATIONS
      ========================================= */
   const scrollElements = document.querySelectorAll(".section-scroll");
-  
+
   const elementInView = (el, offset = 100) => {
     const elementTop = el.getBoundingClientRect().top;
     return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset);
   };
-  
+
   const displayScrollElement = (el) => {
     el.classList.add("scrolled-in");
   };
@@ -65,38 +65,38 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
   const flipCardsData = [
     {
-      title: "Explainer Video",
-      desc: "See how EasyVariants works end-to-end",
+      title: "Explainer Masterclass",
+      desc: "Discover the core orchestration of design variants.",
       link: "https://easyvariants.com/explainer_variants.html",
-      embed: "https://www.youtube.com/embed/ETiWWJaoaZM?autoplay=1&mute=1&loop=1&playlist=ETiWWJaoaZM",
+      embed: "https://easyvariants.com/explainer_variants.html",
       icon: "play_circle"
     },
     {
-      title: "Cap Variants Demo",
-      desc: "Automatic cap colorway generation",
+      title: "Apparel Suite: Caps",
+      desc: "Instant colorway generation for headwear collections.",
       link: "https://easyvariants.com/cap_variants.html",
-      embed: "https://www.youtube.com/embed/2Zl_BkN9L6w?autoplay=1&mute=1&loop=1&playlist=2Zl_BkN9L6w",
+      embed: "https://easyvariants.com/cap_variants.html",
       icon: "checkroom"
     },
     {
-      title: "Sweatshirt Variants Demo",
-      desc: "Full apparel variant automation",
+      title: "Apparel Suite: Sweatshirts",
+      desc: "Multi-layer automation for hoodies and leisurewear.",
       link: "https://easyvariants.com/sweatshirt_variants.html",
-      embed: "https://www.youtube.com/embed/Kd0Olg1cE-s?autoplay=1&mute=1&loop=1&playlist=Kd0Olg1cE-s",
+      embed: "https://easyvariants.com/sweatshirt_variants.html",
       icon: "styler"
     },
     {
-      title: "Shoe Variants Demo",
-      desc: "Footwear design multiplied instantly",
+      title: "Footwear Variants: Shoes",
+      desc: "Dynamic texture and color remapping for footwear.",
       link: "https://easyvariants.com/shoe_variants.html",
-      embed: "https://www.youtube.com/embed/2Zl_BkN9L6w?autoplay=1&mute=1&loop=1&playlist=2Zl_BkN9L6w",
+      embed: "https://easyvariants.com/shoe_variants.html",
       icon: "steps"
     },
     {
-      title: "Color Transition Generator",
-      desc: "Explore infinite gradient transitions",
+      title: "Color Science: Gradients",
+      desc: "Automating complex brand color transitions.",
       link: "https://easyvariants.com/color_transition_generator.html",
-      embed: "https://www.youtube.com/embed/ETiWWJaoaZM?autoplay=1&mute=1&loop=1&playlist=ETiWWJaoaZM",
+      embed: "https://easyvariants.com/color_transition_generator.html",
       icon: "palette"
     }
   ];
@@ -109,16 +109,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let cardsArray = flipCardsData.reverse().map((data, index) => {
       const el = document.createElement("div");
       el.className = "flip-card";
-      
-      el.style.background = `rgba(12, 18, 40, 0.8)`;
+      el.style.background = `rgba(12, 18, 40, 0.95)`;
       el.style.overflow = `hidden`;
-      
+      el.style.borderRadius = `24px`;
+
       el.innerHTML = `
-        <iframe width="100%" height="100%" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none; opacity: 0.6;"></iframe>
-        <a href="${data.embed.split('?')[0].replace('/embed/', '/watch?v=')}" target="_blank" class="fc-badge" style="z-index: 10; position: relative;">&#9654; Watch Now</a>
-        <div class="fc-overlay" style="z-index: 10; position: relative;">
-          <div class="fc-title">${data.title}</div>
-          <div class="fc-desc">${data.desc}</div>
+        <div class="drag-handle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 30; cursor: grab;"></div>
+        
+        <!-- Cropping Wrapper -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+          <iframe width="100%" height="100%" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            style="position: absolute; top: -75px; left: 0; width: 100%; height: calc(100% + 150px); z-index: 1; border: none; opacity: 1; pointer-events: auto; transform: scale(1.15);">
+          </iframe>
+        </div>
+
+        <!-- Sleek Watch Now Button -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 35; pointer-events: none;">
+          <a href="${data.embed}" target="_blank" class="fc-badge" 
+            style="pointer-events: auto; background: rgba(121, 82, 246, 0.9); padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 14px; box-shadow: 0 8px 24px rgba(121, 82, 246, 0.4); text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px);">
+            Watch Now
+          </a>
+        </div>
+
+        <div class="fc-overlay" style="z-index: 20; position: absolute; bottom: 0; left: 0; width: 100%; pointer-events: none; padding: 40px 24px; background: rgba(5, 5, 15, 0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255,255,255,0.08);">
+          <div class="fc-title" style="font-weight: 800; font-size: 24px; color: #fff; margin-bottom: 8px;">${data.title}</div>
+          <div class="fc-desc" style="font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; font-weight: 400;">${data.desc}</div>
         </div>
       `;
       stackContainer.appendChild(el);
@@ -133,9 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsArray.forEach((el, index) => {
         // index 0 = bottom of stack, index len-1 = top of stack
         const visualPos = len - 1 - index; // 0 for top card
-        
+
         el.style.zIndex = index;
-        
+
         if (visualPos === 0) {
           // Top Card is normal, no rotation but ready to drag
           el.style.transform = `translateY(0px) scale(1) rotate(0deg)`;
@@ -146,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const pY = visualPos * stackOffset;
           const s = 1 - (visualPos * 0.05); // shrink by 5% each level
           const rot = stackRotation * Math.min(visualPos, 2); // max 2x rotation base
-          
+
           el.style.transform = `translateY(${pY}px) scale(${s}) rotate(${rot}deg)`;
           el.style.opacity = Math.max(0, 1 - (visualPos * 0.15));
         }
@@ -176,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       isDragging = true;
       topCard.classList.add("dragging");
-      
+
       startX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
       startY = e.clientY || (e.touches ? e.touches[0].clientY : 0);
     };
@@ -202,26 +217,31 @@ document.addEventListener("DOMContentLoaded", () => {
       isDragging = false;
       topCard.classList.remove("dragging");
 
-      // Threshold to throw away: 100px
-      const distance = Math.sqrt(currentX*currentX + currentY*currentY);
-      
-      if (distance > 100) {
-        // User dragged far enough: Throw it away and cycle
-        const throwX = currentX * 3;
-        const throwY = currentY * 3;
+      // Threshold to throw away: 120px
+      const distanceX = Math.abs(currentX);
+      const distanceY = Math.abs(currentY);
+
+      if (distanceX > 120 || distanceY > 120) {
+        // Throw away
+        const winW = window.innerWidth;
+        const throwDirection = currentX > 0 ? 1 : -1;
         
-        topCard.style.transform = `translate(${throwX}px, ${throwY}px) rotate(${currentX * 0.1}deg)`;
+        topCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s';
+        topCard.style.transform = `translate(${throwDirection * winW}px, ${currentY}px) rotate(${throwDirection * 45}deg)`;
         topCard.style.opacity = 0;
 
         setTimeout(() => {
-          // Move from end of array to start of array
+          // Reset style for reuse
+          topCard.style.transition = 'none';
+          topCard.style.opacity = 1;
+          
           const thrown = cardsArray.pop();
           cardsArray.unshift(thrown);
-          // Restore transition and redraw
           updateStackVisuals();
-        }, 300); // match transition speed theoretically
+        }, 500);
       } else {
         // Snap back
+        topCard.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         topCard.style.transform = `translateY(0px) scale(1) rotate(0deg)`;
       }
 
@@ -245,11 +265,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      
+
       const submitBtn = contactForm.querySelector('.submit-btn');
       const sMsg = contactForm.querySelector('.success-msg');
       const eMsg = contactForm.querySelector('.error-msg');
-      
+
       submitBtn.textContent = 'Sending...';
       submitBtn.style.opacity = 0.7;
       sMsg.style.display = 'none';
@@ -262,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Assuming success
         sMsg.style.display = 'block';
         contactForm.reset();
-        
+
         setTimeout(() => {
           sMsg.style.display = 'none';
         }, 5000);
@@ -281,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const activateStep = (stepIndex) => { // 1-indexed
     // Remove active from all steps first 
     tlSteps.forEach((st) => st.classList.remove("active"));
-    
+
     // Add active to current step and previous steps (or just current depending on preference)
     // The prompt says "Each circle glows when active". Let's glow only the active one,
     // but advance the line up to the active one.
@@ -290,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
         st.classList.add("active");
       }
     });
-    
+
     vidDots.forEach(d => d.classList.remove("active"));
     const activeDot = document.querySelector(`.vid-dot[data-target="${stepIndex}"]`);
     if (activeDot) activeDot.classList.add("active");
@@ -307,11 +327,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Progress bar height (0% -> 50% -> 100%)
     if (tlProgress) {
-        let height = 0;
-        if(stepIndex === 1) height = 0;
-        if(stepIndex === 2) height = 50;
-        if(stepIndex === 3) height = 100;
-        tlProgress.style.height = `${height}%`;
+      let height = 0;
+      if (stepIndex === 1) height = 0;
+      if (stepIndex === 2) height = 50;
+      if (stepIndex === 3) height = 100;
+      tlProgress.style.height = `${height}%`;
     }
   };
 
@@ -361,14 +381,14 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         meetMainVid.src = meetData[idx].src;
         meetBadge.textContent = meetData[idx].badge;
-        
+
         meetMainVid.play();
         meetMainVid.style.opacity = '1';
-        
+
         meetDots.forEach(d => d.classList.remove('active'));
         meetDots[idx].classList.add('active');
         currentIdx = idx;
-        
+
         // Reset pause icon if it was changed
         ppIcon.innerHTML = `<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>`;
         isPaused = false;
@@ -395,10 +415,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Auto cycle
     setInterval(() => {
-        if(!isPaused) {
-            let next = (currentIdx + 1) % meetData.length;
-            setMeetSlide(next);
-        }
+      if (!isPaused) {
+        let next = (currentIdx + 1) % meetData.length;
+        setMeetSlide(next);
+      }
     }, 6000);
   }
 

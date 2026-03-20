@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,13 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="contact-page">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-static">
     <div class="nav-container">
-      <div class="nav-logo" style="display: flex; align-items: center; width: 260px; pointer-events: none; user-select: none;">
-        <img src="logo.png" alt="EasyVariants" style="width: 100%; height: auto; object-fit: contain;" />
+      <div class="nav-logo" style="display: flex; align-items: center; gap: 8px; pointer-events: none; user-select: none;">
+        <div style="width: 80px; height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: flex-start; margin-top: -10px;">
+          <img src="logo.png" alt="EasyVariants" style="height: 100px; width: auto; max-width: none; transform: scale(1.6); transform-origin: left center;" />
+        </div>
+        <span style="font-size: 26px; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin-left: -5px;">EasyVariants</span>
       </div>
       <div class="nav-links">
         <a href="index.html#home">Home</a>
@@ -36,11 +41,11 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-     <a href="index.html#home">Home</a>
-     <a href="index.html#solution">Our Solution</a>
-     <a href="index.html#how-it-works">How It Works</a>
-     <a href="index.html#demos">Demo Videos</a>
-     <a href="contactus.html" class="nav-cta-mobile">Get Your Demo Today</a>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#solution">Our Solution</a>
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#demos">Demo Videos</a>
+    <a href="contactus.html" class="nav-cta-mobile">Get Your Demo Today</a>
   </div>
 
   <section class="contact section-scroll">
@@ -63,7 +68,7 @@
                 <input type="text" id="lastName" name="lastName" required />
               </div>
             </div>
-            
+
             <div class="input-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required />
@@ -81,7 +86,7 @@
             </div>
           </form>
         </div>
-        
+
         <div class="contact-illustration">
           <img src="https://easyvariants.com/img/contactus.png" alt="Contact Us" />
         </div>
@@ -110,10 +115,12 @@
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2025 EasyVariants. All Rights Reserved.</p>
-      <p class="disclaimer">Adobe Illustrator&reg; is a trademark of Adobe Inc. EasyVariants is not affiliated with or endorsed by Adobe Inc.</p>
+      <p class="disclaimer">Adobe Illustrator&reg; is a trademark of Adobe Inc. EasyVariants is not affiliated with or
+        endorsed by Adobe Inc.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
