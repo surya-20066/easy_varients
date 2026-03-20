@@ -338,101 +338,68 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================================
      6. MEET SECTION DRAGGABLE CAROUSEL
      ========================================= */
-  const dcTrack = document.getElementById("dc-track");
-  if (dcTrack) {
-    const dcData = [
-      { title: "Explainer Video", desc: "See how EasyVariants works end-to-end", link: "https://easyvariants.com/explainer_variants.html", yt: "https://www.youtube.com/watch?v=ETiWWJaoaZM" },
-      { title: "Cap Variants", desc: "Automatic cap colorway generation", link: "https://easyvariants.com/cap_variants.html", yt: "https://www.youtube.com/watch?v=2Zl_BkN9L6w" },
-      { title: "Sweatshirt Variants", desc: "Full apparel variant automation", link: "https://easyvariants.com/sweatshirt_variants.html", yt: "https://www.youtube.com/watch?v=Kd0Olg1cE-s" },
-      { title: "Shoe Variants", desc: "Footwear design multiplied instantly", link: "https://easyvariants.com/shoe_variants.html", yt: "https://www.youtube.com/watch?v=2Zl_BkN9L6w" },
-      { title: "Color Generator", desc: "Explore infinite gradient transitions", link: "https://easyvariants.com/color_transition_generator.html", yt: "https://www.youtube.com/watch?v=ETiWWJaoaZM" }
+  /* =========================================
+     6. MEET SECTION CAROUSEL (IMAGE STYLE)
+     ========================================= */
+  const meetMainVid = document.getElementById('meet-main-vid');
+  const meetDots = document.querySelectorAll('.m-dot');
+  const meetBadge = document.getElementById('meet-badge');
+  const meetPPBtn = document.getElementById('meet-pause-play');
+  const ppIcon = document.getElementById('pp-icon');
+
+  if (meetMainVid && meetDots.length > 0) {
+    const meetData = [
+      { src: 'sweatshirt_v.mp4', badge: 'Sweatshirt Patterns' },
+      { src: 'cap_v.mp4', badge: 'Cap Variations' },
+      { src: 'color_v.mp4', badge: 'Color Transition Generator' }
     ];
+    let currentIdx = 0;
+    let isPaused = false;
 
-    dcData.forEach((data, i) => {
-      const card = document.createElement("div");
-      card.className = "dc-card";
-      card.innerHTML = `
-        <div class="dc-preview" id="dc-prev-${i}">
-          <a class="dc-play dc-watch-btn" href="${data.yt}" target="_blank" style="text-decoration:none;">&#9654; Watch Now</a>
-          <h3>${data.title}</h3>
-          <p>${data.desc}</p>
-        </div>
-      `;
-      dcTrack.appendChild(card);
+    const setMeetSlide = (idx) => {
+      meetMainVid.style.opacity = '0';
+      setTimeout(() => {
+        meetMainVid.src = meetData[idx].src;
+        meetBadge.textContent = meetData[idx].badge;
+        
+        meetMainVid.play();
+        meetMainVid.style.opacity = '1';
+        
+        meetDots.forEach(d => d.classList.remove('active'));
+        meetDots[idx].classList.add('active');
+        currentIdx = idx;
+        
+        // Reset pause icon if it was changed
+        ppIcon.innerHTML = `<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>`;
+        isPaused = false;
+      }, 300);
+    };
+
+    meetDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => setMeetSlide(i));
     });
 
-    const dcCards = document.querySelectorAll(".dc-card");
-
-    let dcIsDown = false;
-    let dcStartX = 0;
-    let dcTranslate = 0;
-    let dcAnimID;
-
-    const snapDcNearest = () => {
-      const dcContainerWidth = document.querySelector('.dc-container').offsetWidth;
-      const centerLook = dcContainerWidth / 2 - dcTranslate;
-      
-      let minDiff = Infinity;
-      let activeIdx = 0;
-
-      dcCards.forEach((card, i) => {
-        const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
-        const diff = Math.abs(cardCenter - centerLook);
-        if(diff < minDiff) { minDiff = diff; activeIdx = i; }
-        card.classList.remove('active-center');
+    if (meetPPBtn) {
+      meetPPBtn.addEventListener('click', () => {
+        if (meetMainVid.paused) {
+          meetMainVid.play();
+          ppIcon.innerHTML = `<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>`;
+          isPaused = false;
+        } else {
+          meetMainVid.pause();
+          ppIcon.innerHTML = `<path d="M8 5v14l11-7z"></path>`;
+          isPaused = true;
+        }
       });
+    }
 
-      if (activeIdx < 0) activeIdx = 0;
-      if (activeIdx > dcCards.length - 1) activeIdx = dcCards.length - 1;
-
-      dcCards[activeIdx].classList.add('active-center');
-      
-      const targetCenter = dcCards[activeIdx].offsetLeft + (dcCards[activeIdx].offsetWidth / 2);
-      dcTranslate = (dcContainerWidth / 2) - targetCenter;
-      dcTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-      dcTrack.style.transform = `translateX(${dcTranslate}px)`;
-    };
-
-    const dcAnimation = () => {
-      dcTrack.style.transform = `translateX(${dcTranslate}px)`;
-      if(dcIsDown) requestAnimationFrame(dcAnimation);
-    };
-
-    dcTrack.addEventListener('mousedown', (e) => {
-      dcIsDown = true;
-      dcStartX = e.pageX - dcTranslate;
-      dcTrack.style.transition = 'none';
-      dcAnimID = requestAnimationFrame(dcAnimation);
-    });
-    dcTrack.addEventListener('mousemove', (e) => {
-      if(!dcIsDown) return;
-      dcTranslate = e.pageX - dcStartX;
-    });
-    const dcEndDrag = () => {
-      if(!dcIsDown) return;
-      dcIsDown = false;
-      cancelAnimationFrame(dcAnimID);
-      snapDcNearest();
-    };
-    dcTrack.addEventListener('mouseup', dcEndDrag);
-    dcTrack.addEventListener('mouseleave', dcEndDrag);
-
-    dcTrack.addEventListener('touchstart', (e) => {
-      dcIsDown = true;
-      dcStartX = e.touches[0].clientX - dcTranslate;
-      dcTrack.style.transition = 'none';
-      dcAnimID = requestAnimationFrame(dcAnimation);
-    }, {passive:true});
-    dcTrack.addEventListener('touchmove', (e) => {
-      if(!dcIsDown) return;
-      dcTranslate = e.touches[0].clientX - dcStartX;
-    }, {passive:true});
-    dcTrack.addEventListener('touchend', dcEndDrag);
-
-    setTimeout(() => {
-      if(dcCards.length > 0) snapDcNearest();
-    }, 100);
-    window.addEventListener('resize', snapDcNearest);
+    // Auto cycle
+    setInterval(() => {
+        if(!isPaused) {
+            let next = (currentIdx + 1) % meetData.length;
+            setMeetSlide(next);
+        }
+    }, 6000);
   }
 
 });
