@@ -341,20 +341,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const dcTrack = document.getElementById("dc-track");
   if (dcTrack) {
     const dcData = [
-      { title: "Explainer Video", desc: "See how EasyVariants works end-to-end", link: "https://easyvariants.com/explainer_variants.html" },
-      { title: "Cap Variants", desc: "Automatic cap colorway generation", link: "https://easyvariants.com/cap_variants.html" },
-      { title: "Sweatshirt Variants", desc: "Full apparel variant automation", link: "https://easyvariants.com/sweatshirt_variants.html" },
-      { title: "Shoe Variants", desc: "Footwear design multiplied instantly", link: "https://easyvariants.com/shoe_variants.html" },
-      { title: "Color Generator", desc: "Explore infinite gradient transitions", link: "https://easyvariants.com/color_transition_generator.html" }
+      { title: "Explainer Video", desc: "See how EasyVariants works end-to-end", link: "https://easyvariants.com/explainer_variants.html", yt: "https://www.youtube.com/watch?v=ETiWWJaoaZM" },
+      { title: "Cap Variants", desc: "Automatic cap colorway generation", link: "https://easyvariants.com/cap_variants.html", yt: "https://www.youtube.com/watch?v=2Zl_BkN9L6w" },
+      { title: "Sweatshirt Variants", desc: "Full apparel variant automation", link: "https://easyvariants.com/sweatshirt_variants.html", yt: "https://www.youtube.com/watch?v=Kd0Olg1cE-s" },
+      { title: "Shoe Variants", desc: "Footwear design multiplied instantly", link: "https://easyvariants.com/shoe_variants.html", yt: "https://www.youtube.com/watch?v=2Zl_BkN9L6w" },
+      { title: "Color Generator", desc: "Explore infinite gradient transitions", link: "https://easyvariants.com/color_transition_generator.html", yt: "https://www.youtube.com/watch?v=ETiWWJaoaZM" }
     ];
 
     dcData.forEach((data, i) => {
       const card = document.createElement("div");
       card.className = "dc-card";
       card.innerHTML = `
-        <div class="dc-iframe-wrapper" id="dc-wrap-${i}" style="pointer-events: none;"></div>
         <div class="dc-preview" id="dc-prev-${i}">
-          <div class="dc-play" data-idx="${i}">&#9654;</div>
+          <a class="dc-play dc-watch-btn" href="${data.yt}" target="_blank" style="text-decoration:none;">&#9654; Watch Now</a>
           <h3>${data.title}</h3>
           <p>${data.desc}</p>
         </div>
@@ -363,21 +362,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const dcCards = document.querySelectorAll(".dc-card");
-    const dcPlays = document.querySelectorAll(".dc-play");
-
-    dcPlays.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const idx = btn.getAttribute("data-idx");
-        const wrap = document.getElementById(`dc-wrap-${idx}`);
-        const prev = document.getElementById(`dc-prev-${idx}`);
-        wrap.innerHTML = `<iframe src="${dcData[idx].link}" allowfullscreen allow="autoplay"></iframe>`;
-        wrap.style.pointerEvents = "auto";
-        wrap.style.zIndex = "3";
-        prev.style.opacity = "0";
-        setTimeout(() => prev.style.pointerEvents = "none", 300);
-      });
-    });
 
     let dcIsDown = false;
     let dcStartX = 0;
