@@ -1,6 +1,6 @@
 :root {
   --bg-main: #06060f;
-  --bg-alt: #0a0a1f; 
+  --bg-alt: #0a0a1f;
 
   --color-white: #ffffff;
   --color-body: #8c8aaa;
@@ -10,7 +10,7 @@
   --brand-purple: #a78bfa;
   --brand-violet: #7c3aed;
   --brand-indigo: #4f46e5;
-  
+
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.07);
 
@@ -197,8 +197,9 @@ section:nth-of-type(even) {
 
 .nav-container {
   pointer-events: auto;
+  width: 92%;
   max-width: 1200px;
-  height: 64px;
+  height: 72px;
   margin: 0 auto;
   padding: 0 24px;
   border-radius: 60px;
@@ -207,7 +208,7 @@ section:nth-of-type(even) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: none;
 }
 
@@ -1125,62 +1126,7 @@ footer {
   color: #EF4444;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .timeline-layout {
-    flex-direction: column;
-  }
 
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .demo-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .demo-text {
-    text-align: center;
-  }
-
-  .contact-split {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .nav-links,
-  .nav-cta {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .form-row .input-group {
-    margin-bottom: 20px;
-  }
-
-  .hero-rocket {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 40px;
-  }
-
-  section {
-    padding: 80px 0;
-  }
-}
 
 /* Our Solution Section Redesign */
 .solution-section {
@@ -1283,23 +1229,7 @@ footer {
   line-height: 1;
 }
 
-@media (max-width: 992px) {
-  .solution-container {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .solution-left {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 40px;
-  }
-
-  .solution-right {
-    width: 100%;
-    justify-content: center;
-  }
-}
 
 /* Smart Automation System */
 .sa-layout {
@@ -1374,28 +1304,7 @@ footer {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 992px) {
-  .sa-layout {
-    flex-direction: column;
-  }
 
-  .sa-grid {
-    flex: none;
-    width: 100%;
-  }
-
-  .sa-highlight {
-    flex: none;
-    width: 100%;
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sa-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* --- V2 STYLES ADDED FOR HERO, SOLUTIONS, AND HOW IT WORKS --- */
 
@@ -2035,75 +1944,9 @@ footer {
   background: rgba(255, 255, 255, 0.5);
 }
 
-@media (max-width: 992px) {
-  .solutions-grid-v2 {
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .hw-container-v2 {
-    flex-direction: column;
-  }
 
-  .hero-container-v2 {
-    flex-direction: column;
-    padding-top: 100px;
-    text-align: center;
-  }
 
-  .hero-left {
-    flex: none;
-    width: 100%;
-    padding-right: 0;
-    margin-bottom: 60px;
-  }
-
-  .hero-left p.hero-sub {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-left .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .no-scroll {
-    height: auto;
-    min-height: 100vh;
-    padding: 60px 0 !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .solutions-grid-v2 {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-v2 {
-    padding-left: 20px;
-  }
-
-  .timeline-glow,
-  .timeline-line-v2 {
-    left: 20px;
-  }
-
-  .tl-step {
-    padding-left: 30px;
-  }
-
-  .tl-circle {
-    left: -24px;
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-}
 
 /* Meet EasyVariants Desktop Layout */
 .meet-section {
@@ -2131,46 +1974,7 @@ footer {
 }
 
 /* Meet EasyVariants & Snake Timeline */
-@media (max-width: 992px) {
-  .meet-layout {
-    flex-direction: column;
-    text-align: left;
-  }
 
-  .meet-left,
-  .meet-right {
-    width: 100%;
-    flex: none;
-    padding-right: 0;
-  }
-
-  .meet-video-placeholder {
-    margin-bottom: 30px;
-  }
-
-  .snake-svg {
-    display: none !important;
-  }
-
-  .snake-step {
-    justify-content: center !important;
-  }
-
-  .snake-step .ss-inner {
-    width: 100% !important;
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-
-  .snake-step .ss-card {
-    margin: 20px 0 0 0 !important;
-    width: 100%;
-  }
-
-  .snake-step .sn-num {
-    margin: 0 auto;
-  }
-}
 
 /* Section backgrounds for Visual Separation */
 .section-alt-bg {
@@ -2326,28 +2130,190 @@ footer {
   border: none;
 }
 
-@media (max-width: 768px) {
-  .dc-card {
-    flex: 0 0 85vw;
-    height: 200px;
-    margin: 0 5px;
-  }
 
-  .dc-preview h3 {
-    font-size: 16px;
-  }
-
-  .dc-preview p {
-    font-size: 12px;
-  }
-
-  .dc-play {
-    padding: 10px 20px;
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-}
 
 .meet-video-carousel {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   MEDIA QUERIES (Consolidated & Refined)
+   ========================================= */
+
+@media (max-width: 1200px) {
+  .hero-left h1 { font-size: 48px; }
+  .demo-container { gap: 40px; }
+}
+
+@media (max-width: 992px) {
+  /* High-specificity layout overrides */
+  div.hero-container-v2, div.meet-layout, div.solution-container, div.sa-layout, div.hw-container-v2, div.demo-container, div.contact-split {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 40px 20px !important;
+  }
+
+  div.hero-left, div.hero-right, div.meet-left, div.meet-right, div.solution-left, div.solution-right, div.sa-grid, div.sa-highlight, div.hw-left, div.hw-right, div.demo-text, div.demo-flipcards {
+    flex: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 40px 0 !important;
+    max-width: 100% !important;
+  }
+
+  div.hero-left h1 { 
+    font-size: 36px !important; 
+    text-align: center !important;
+    margin: 0 auto 20px !important;
+  }
+  
+  div.hero-left p.hero-sub { 
+    margin: 0 auto 30px !important; 
+    text-align: center !important;
+  }
+
+  body .hero-actions, .hero-actions { 
+    flex-direction: column !important; 
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    display: flex !important;
+    width: 100% !important;
+  }
+  
+  div.hero-actions .btn {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .video-preview-panel { 
+    margin-top: 40px !important; 
+    position: static !important; 
+    min-height: auto !important; 
+    height: 300px !important;
+  }
+  
+  .sa-grid { 
+    grid-template-columns: 1fr !important; 
+    width: 100% !important; 
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 { font-size: 28px !important; }
+  .section-center h2 { font-size: 32px !important; }
+  .advantage h2 { font-size: 24px !important; }
+}
+
+/* --- FINAL AGGRESSIVE OVERRIDES --- */
+@media (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header.navbar {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 10px !important;
+  }
+
+  div.nav-container {
+    width: 92% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    height: 64px !important;
+    padding: 0 20px !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+  }
+  
+  .nav-links, .nav-cta {
+    display: none !important;
+  }
+
+  /* Force stack Advantage heading */
+  .advantage h2 span {
+    display: block !important;
+    margin: 10px auto !important;
+    font-size: 24px !important;
+  }
+
+  .footer-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+  
+  /* Hero buttons stacking final safeguard */
+  body .hero-actions, .hero-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    display: flex !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+}
+
+/* Advantage Heading Polish */
+.advantage h2 span {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .advantage h2 span {
+    display: block;
+  }
+}
+
+/* Global Smooth Transitions */
+a, button, .card, .glass-card, .sa-card, .btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar Style for a Premium Feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  border: 2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Ensure no horizontal overflow ever */
+body, html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Footer Font Size Improvement */
+footer .footer-nav a {
+  font-size: 15px;
+}
+footer .footer-brand p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.footer-bottom p {
+  font-size: 13px;
 }
